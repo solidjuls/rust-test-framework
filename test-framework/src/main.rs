@@ -1,14 +1,6 @@
 // use std::env;
 // use testframework::Config;
 // use std::process;
-use macro_demo::test;
-
-#[test(a)]
-fn do_something() {
-    let a = 9;
-    a = 6;
-    a = 0;
-}
 
 fn main() {
     // do_something()

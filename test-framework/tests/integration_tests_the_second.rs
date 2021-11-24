@@ -4,16 +4,6 @@ use testframework::register_test;
 testframework::setup!();
 
 #[test_custom]
-fn passes() {
+fn foo() {
     assert!(true);
-}
-
-#[test_custom]
-fn fails() {
-    assert!(false);
-}
-
-#[test_custom]
-fn also_fails() {
-    assert!(false);
 }
