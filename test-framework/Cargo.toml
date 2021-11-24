@@ -3,6 +3,6 @@ name = "testframework"
 version = "0.1.0"
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
+macro_demo = { path = "../macro-demo" }
+inventory = "0.1"

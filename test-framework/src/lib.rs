@@ -1,5 +1,33 @@
 use std::error::Error;
 use std::fs;
+use std::fmt;
+pub struct Test {
+    pub name: &'static str,
+    pub line: u32,
+    pub file: &'static str,
+    pub handler: Box<dyn Fn()>,
+}
+
+impl fmt::Debug for Test {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.debug_struct("Test")
+         .field("name", &self.name)
+         .field("line", &self.line)
+         .field("file", &self.file)
+         .field("handler", &"{closure}")
+         .finish()
+    }
+}
+
+inventory::collect!(Test);
+
+pub fn run_all_tests() {
+    for test in inventory::iter::<Test> {
+        println!("{:?}", test);
+    }
+}
+
+/////////////////////////////////////////////////////////
 
 pub struct Config {
     pub query: String,
@@ -19,10 +47,7 @@ impl Config {
     }
 }
 
-pub fn search_case_insensitive<'a>(
-    query: &str,
-    contents: &'a str,
-) -> Vec<&'a str> {
+pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     let query = query.to_lowercase();
     let mut results = Vec::new();
 
