@@ -5,4 +5,5 @@ edition = "2018"
 
 [dependencies]
 macro_demo = { path = "../macro-demo" }
+file_search = { path = "../file_search" }
 inventory = "0.1"

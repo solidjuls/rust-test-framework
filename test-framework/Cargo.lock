@@ -13,6 +13,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "file_search"
+version = "0.1.0"
+
+[[package]]
 name = "ghost"
 version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -86,6 +90,7 @@ dependencies = [
 name = "testframework"
 version = "0.1.0"
 dependencies = [
+ "file_search",
  "inventory",
  "macro_demo",
 ]
